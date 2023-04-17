@@ -2,6 +2,8 @@ server:
   port: 8083
 
 spring:
+  application:
+    name: RatingService
   datasource:
     url: jdbc:postgresql://localhost:5432/microservices-ratingservice
     username: postgres
@@ -11,3 +13,12 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8084/eureka
